@@ -49,5 +49,4 @@ extension Data {
         }
         return Data(digest)
     }
-
 }
