@@ -14,20 +14,20 @@ struct TestError: Error {
     let description: String
 }
 
-@objc public class TestUtils: NSObject {
-    
+public class TestUtils {
+
     static let bundle = Bundle(for: TestUtils.self)
-    
+
     static public func pemKeyString(name: String) -> String {
         let pubPath = bundle.path(forResource: name, ofType: "pem")!
         return (try! NSString(contentsOfFile: pubPath, encoding: String.Encoding.utf8.rawValue)) as String
     }
-    
+
     static public func derKeyData(name: String) -> Data {
         let pubPath  = bundle.path(forResource: name, ofType: "der")!
         return (try! Data(contentsOf: URL(fileURLWithPath: pubPath)))
     }
-    
+
     static public func publicKey(name: String) throws -> PublicKey {
         guard let path = bundle.path(forResource: name, ofType: "pem") else {
             throw TestError(description: "Couldn't load key for provided path")
@@ -35,7 +35,7 @@ struct TestError: Error {
         let pemString = try String(contentsOf: URL(fileURLWithPath: path))
         return try PublicKey(pemEncoded: pemString)
     }
-    
+
     static public func privateKey(name: String) throws -> PrivateKey {
         guard let path = bundle.path(forResource: name, ofType: "pem") else {
             throw TestError(description: "Couldn't load key for provided path")
@@ -52,7 +52,7 @@ struct TestError: Error {
         }
         return Data(randomBytes)
     }
-    
+
     static func assertThrows(type: SwiftyRSAError, file: StaticString = #file, line: UInt = #line, block: () throws ->  Void) {
         do {
             try block()
@@ -96,3 +96,4 @@ extension SwiftyRSAError: Equatable {
         }
     }
 }
+

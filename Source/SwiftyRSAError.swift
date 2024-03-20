@@ -10,7 +10,7 @@
 import Foundation
 
 public enum SwiftyRSAError: Error {
-    
+
     case pemDoesNotContainKey
     case keyRepresentationFailed(error: CFError?)
     case keyGenerationFailed(error: CFError?)

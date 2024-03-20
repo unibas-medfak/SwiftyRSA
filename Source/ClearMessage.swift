@@ -9,17 +9,17 @@
 import Foundation
 
 public class ClearMessage: Message {
-    
+
     /// Data of the message
     public let data: Data
-    
+
     /// Creates a clear message with data.
     ///
     /// - Parameter data: Data of the clear message
     public required init(data: Data) {
         self.data = data
     }
-    
+
     /// Creates a clear message from a string, with the specified encoding.
     ///
     /// - Parameters:
@@ -32,7 +32,7 @@ public class ClearMessage: Message {
         }
         self.init(data: data)
     }
-    
+
     /// Returns the string representation of the clear message using the specified
     /// string encoding.
     ///
@@ -45,7 +45,7 @@ public class ClearMessage: Message {
         }
         return str
     }
-    
+
     /// Encrypts a clear message with a public key and returns an encrypted message.
     ///
     /// - Parameters:
@@ -54,9 +54,9 @@ public class ClearMessage: Message {
     /// - Returns: Encrypted message
     /// - Throws: SwiftyRSAError
     public func encrypted(with key: PublicKey, padding: Padding) throws -> EncryptedMessage {
-        
+
         let blockSize = SecKeyGetBlockSize(key.reference)
-        
+
         var maxChunkSize: Int
         switch padding {
         case []:
@@ -66,35 +66,35 @@ public class ClearMessage: Message {
         default:
             maxChunkSize = blockSize - 11
         }
-        
+
         var decryptedDataAsArray = [UInt8](repeating: 0, count: data.count)
         (data as NSData).getBytes(&decryptedDataAsArray, length: data.count)
-        
+
         var encryptedDataBytes = [UInt8](repeating: 0, count: 0)
         var idx = 0
         while idx < decryptedDataAsArray.count {
-            
+
             let idxEnd = min(idx + maxChunkSize, decryptedDataAsArray.count)
             let chunkData = [UInt8](decryptedDataAsArray[idx..<idxEnd])
-            
+
             var encryptedDataBuffer = [UInt8](repeating: 0, count: blockSize)
             var encryptedDataLength = blockSize
-            
+
             let status = SecKeyEncrypt(key.reference, padding, chunkData, chunkData.count, &encryptedDataBuffer, &encryptedDataLength)
-            
+
             guard status == noErr else {
                 throw SwiftyRSAError.chunkEncryptFailed(index: idx)
             }
-            
+
             encryptedDataBytes += encryptedDataBuffer
-            
+
             idx += maxChunkSize
         }
-        
+
         let encryptedData = Data(bytes: encryptedDataBytes, count: encryptedDataBytes.count)
         return EncryptedMessage(data: encryptedData)
     }
-    
+
     /// Signs a clear message using a private key.
     /// The clear message will first be hashed using the specified digest type, then signed
     /// using the provided private key.
@@ -105,31 +105,31 @@ public class ClearMessage: Message {
     /// - Returns: Signature of the clear message after signing it with the specified digest type.
     /// - Throws: SwiftyRSAError
     public func signed(with key: PrivateKey, digestType: Signature.DigestType) throws -> Signature {
-        
+
         let digest = self.digest(digestType: digestType)
         let blockSize = SecKeyGetBlockSize(key.reference)
         let maxChunkSize = blockSize - 11
-        
+
         guard digest.count <= maxChunkSize else {
             throw SwiftyRSAError.invalidDigestSize(digestSize: digest.count, maxChunkSize: maxChunkSize)
         }
-        
+
         var digestBytes = [UInt8](repeating: 0, count: digest.count)
         (digest as NSData).getBytes(&digestBytes, length: digest.count)
-        
+
         var signatureBytes = [UInt8](repeating: 0, count: blockSize)
         var signatureDataLength = blockSize
-        
+
         let status = SecKeyRawSign(key.reference, digestType.padding, digestBytes, digestBytes.count, &signatureBytes, &signatureDataLength)
-        
+
         guard status == noErr else {
             throw SwiftyRSAError.signatureCreateFailed(status: status)
         }
-        
+
         let signatureData = Data(bytes: signatureBytes, count: signatureBytes.count)
         return Signature(data: signatureData)
     }
-    
+
     /// Verifies the signature of a clear message.
     ///
     /// - Parameters:
@@ -139,16 +139,16 @@ public class ClearMessage: Message {
     /// - Returns: Result of the verification
     /// - Throws: SwiftyRSAError
     public func verify(with key: PublicKey, signature: Signature, digestType: Signature.DigestType) throws -> Bool {
-        
+
         let digest = self.digest(digestType: digestType)
         var digestBytes = [UInt8](repeating: 0, count: digest.count)
         (digest as NSData).getBytes(&digestBytes, length: digest.count)
-        
+
         var signatureBytes = [UInt8](repeating: 0, count: signature.data.count)
         (signature.data as NSData).getBytes(&signatureBytes, length: signature.data.count)
-        
+
         let status = SecKeyRawVerify(key.reference, digestType.padding, digestBytes, digestBytes.count, signatureBytes, signatureBytes.count)
-        
+
         if status == errSecSuccess {
             return true
         } else if status == -9809 {
@@ -157,11 +157,11 @@ public class ClearMessage: Message {
             throw SwiftyRSAError.signatureVerifyFailed(status: status)
         }
     }
-    
+
     func digest(digestType: Signature.DigestType) -> Data {
-        
+
         let digest: Data
-        
+
         switch digestType {
         case .sha1:
             digest = data.swiftyRSASHA1()
@@ -174,7 +174,7 @@ public class ClearMessage: Message {
         case .sha512:
             digest = data.swiftyRSASHA512()
         }
-        
+
         return digest
     }
 }

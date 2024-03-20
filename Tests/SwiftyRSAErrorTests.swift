@@ -10,17 +10,17 @@ import XCTest
 @testable import SwiftyRSA
 
 final class SwiftyRSAErrorTests: XCTestCase {
-    
+
     private enum DummyError: Error, LocalizedError {
         case dummyFailed(Error)
-        
+
         var errorDescription: String? {
             switch self {
             case .dummyFailed:
                 return "Dummy Failed"
             }
         }
-        
+
         var failureReason: String? {
             switch self {
             case .dummyFailed(let error):
@@ -28,13 +28,13 @@ final class SwiftyRSAErrorTests: XCTestCase {
             }
         }
     }
-    
+
     func test_getLocalizedDescription_whenSwiftyRSAErrorIsTypedWithErrorGeneric() {
         let sut: DummyError = .dummyFailed(SwiftyRSAError.notAPublicKey)
         XCTAssertEqual(sut.localizedDescription, "Dummy Failed")
         XCTAssertEqual(sut.failureReason, "Provided key is not a valid RSA public key")
     }
-    
+
     func test_allcases_shouldVerifyLocalizedDescriptions() {
         mockCases().forEach {
             switch $0 {
@@ -118,3 +118,4 @@ private extension SwiftyRSAErrorTests {
         ]
     }
 }
+
