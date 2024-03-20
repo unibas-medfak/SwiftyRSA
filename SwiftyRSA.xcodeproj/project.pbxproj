@@ -22,7 +22,6 @@
 		9B4E2EBA252D8A0B0085F2B9 /* Data+SHA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E2EB7252D8A0B0085F2B9 /* Data+SHA.swift */; };
 		BF52D5FDEDA5DFCA62ECD03992601E82 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E84F551B29670A456D12366AA4C8E5 /* SwiftyRSA.swift */; };
 		C034317B1EC2D7E30019B7E8 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034317A1EC2D7E30019B7E8 /* Asn1Parser.swift */; };
-		C03AF73A1EC7031900DE8166 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06A33DA1E6E815A000EE6DC /* SwiftyRSA+ObjC.swift */; };
 		C03AF73E1ECAB2FC00DE8166 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AF73D1ECAB2FC00DE8166 /* SwiftyRSAError.swift */; };
 		C04D33811DC54D5700D65B05 /* swiftyrsa-public-base64-newlines.txt in Resources */ = {isa = PBXBuildFile; fileRef = C04D33801DC54D5700D65B05 /* swiftyrsa-public-base64-newlines.txt */; };
 		C057922321545CB00057F401 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E83E081ECD7F3000E9D63C /* ClearMessage.swift */; };
@@ -34,7 +33,6 @@
 		C057922B21545CB00057F401 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E83DFC1ECD7DA300E9D63C /* PublicKey.swift */; };
 		C057922C21545CB00057F401 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A00B1D90754E00E285C2 /* Signature.swift */; };
 		C057922D21545CB00057F401 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E84F551B29670A456D12366AA4C8E5 /* SwiftyRSA.swift */; };
-		C057922E21545CB00057F401 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06A33DA1E6E815A000EE6DC /* SwiftyRSA+ObjC.swift */; };
 		C057922F21545CB00057F401 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AF73D1ECAB2FC00DE8166 /* SwiftyRSAError.swift */; };
 		C0579240215465350057F401 /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E83E081ECD7F3000E9D63C /* ClearMessage.swift */; };
 		C0579241215465350057F401 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C034317A1EC2D7E30019B7E8 /* Asn1Parser.swift */; };
@@ -45,7 +43,6 @@
 		C0579247215465350057F401 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E83DFC1ECD7DA300E9D63C /* PublicKey.swift */; };
 		C0579248215465350057F401 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A00B1D90754E00E285C2 /* Signature.swift */; };
 		C0579249215465350057F401 /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E84F551B29670A456D12366AA4C8E5 /* SwiftyRSA.swift */; };
-		C057924A215465350057F401 /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06A33DA1E6E815A000EE6DC /* SwiftyRSA+ObjC.swift */; };
 		C057924B215465350057F401 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03AF73D1ECAB2FC00DE8166 /* SwiftyRSAError.swift */; };
 		C0579257215465750057F401 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0579238215465040057F401 /* SwiftyRSA.framework */; };
 		C057925D2154659B0057F401 /* KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A00F1D9083D000E285C2 /* KeyTests.swift */; };
@@ -53,7 +50,6 @@
 		C057925F2154659B0057F401 /* EncryptDecryptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A0151D9092C700E285C2 /* EncryptDecryptTests.swift */; };
 		C05792602154659B0057F401 /* SignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A0171D90969A00E285C2 /* SignatureTests.swift */; };
 		C05792612154659B0057F401 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E21744A2073DB8AC7BAEB324D36D4DB /* TestUtils.swift */; };
-		C05792622154659B0057F401 /* ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C07408AC1D9E1BA800AB6814 /* ObjCTests.m */; };
 		C0579263215465A60057F401 /* swiftyrsa-public-base64-newlines.txt in Resources */ = {isa = PBXBuildFile; fileRef = C04D33801DC54D5700D65B05 /* swiftyrsa-public-base64-newlines.txt */; };
 		C0579264215465A60057F401 /* swiftyrsa-private.der in Resources */ = {isa = PBXBuildFile; fileRef = C065ED6E1DBF314500674763 /* swiftyrsa-private.der */; };
 		C0579265215465A60057F401 /* swiftyrsa-public-base64.txt in Resources */ = {isa = PBXBuildFile; fileRef = C096A0111D9085C100E285C2 /* swiftyrsa-public-base64.txt */; };
@@ -71,7 +67,6 @@
 		C076F54A1DADEBC2006AF5DB /* EncryptDecryptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A0151D9092C700E285C2 /* EncryptDecryptTests.swift */; };
 		C076F54B1DADEBC2006AF5DB /* SignatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096A0171D90969A00E285C2 /* SignatureTests.swift */; };
 		C076F54C1DADEBC2006AF5DB /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E21744A2073DB8AC7BAEB324D36D4DB /* TestUtils.swift */; };
-		C076F54D1DADEBC2006AF5DB /* ObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C07408AC1D9E1BA800AB6814 /* ObjCTests.m */; };
 		C076F54E1DADEC1D006AF5DB /* swiftyrsa-public-base64.txt in Resources */ = {isa = PBXBuildFile; fileRef = C096A0111D9085C100E285C2 /* swiftyrsa-public-base64.txt */; };
 		C076F54F1DADEC1D006AF5DB /* multiple-keys-testcase.pem in Resources */ = {isa = PBXBuildFile; fileRef = AD7F28E3936301CA24DF13E22196C73B /* multiple-keys-testcase.pem */; };
 		C076F5501DADEC1D006AF5DB /* multiple-keys-testcase.sh in Resources */ = {isa = PBXBuildFile; fileRef = 47807FD4AF81104758D4EA9B778F5186 /* multiple-keys-testcase.sh */; };
@@ -133,8 +128,6 @@
 		C0579238215465040057F401 /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0579252215465750057F401 /* SwiftyRSA tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyRSA tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C065ED6E1DBF314500674763 /* swiftyrsa-private.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "swiftyrsa-private.der"; sourceTree = "<group>"; };
-		C06A33DA1E6E815A000EE6DC /* SwiftyRSA+ObjC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftyRSA+ObjC.swift"; sourceTree = "<group>"; };
-		C07408AC1D9E1BA800AB6814 /* ObjCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCTests.m; sourceTree = "<group>"; };
 		C076F53D1DADEB90006AF5DB /* SwiftyRSA iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftyRSA iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C076F5411DADEB90006AF5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C084A7291EC3034B003F79ED /* swiftyrsa-private-header-octetstring.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "swiftyrsa-private-header-octetstring.pem"; sourceTree = "<group>"; };
@@ -229,7 +222,6 @@
 				902623FD2687278D00489B07 /* X509Certificate.swift */,
 				C096A00B1D90754E00E285C2 /* Signature.swift */,
 				38E84F551B29670A456D12366AA4C8E5 /* SwiftyRSA.swift */,
-				C06A33DA1E6E815A000EE6DC /* SwiftyRSA+ObjC.swift */,
 				C03AF73D1ECAB2FC00DE8166 /* SwiftyRSAError.swift */,
 			);
 			path = Source;
@@ -256,7 +248,6 @@
 				C096A0171D90969A00E285C2 /* SignatureTests.swift */,
 				9E21744A2073DB8AC7BAEB324D36D4DB /* TestUtils.swift */,
 				9737218C272A05D100D988A7 /* SwiftyRSAErrorTests.swift */,
-				C07408AC1D9E1BA800AB6814 /* ObjCTests.m */,
 				C076F5411DADEB90006AF5DB /* Info.plist */,
 			);
 			path = Tests;
@@ -539,7 +530,6 @@
 				C0969FFC1D906B5C00E285C2 /* Key.swift in Sources */,
 				BF52D5FDEDA5DFCA62ECD03992601E82 /* SwiftyRSA.swift in Sources */,
 				C03AF73E1ECAB2FC00DE8166 /* SwiftyRSAError.swift in Sources */,
-				C03AF73A1EC7031900DE8166 /* SwiftyRSA+ObjC.swift in Sources */,
 				C0E83DFD1ECD7DA300E9D63C /* PublicKey.swift in Sources */,
 				C034317B1EC2D7E30019B7E8 /* Asn1Parser.swift in Sources */,
 				C0E83E051ECD7DC400E9D63C /* PrivateKey.swift in Sources */,
@@ -562,7 +552,6 @@
 				C057922B21545CB00057F401 /* PublicKey.swift in Sources */,
 				C057922C21545CB00057F401 /* Signature.swift in Sources */,
 				C057922D21545CB00057F401 /* SwiftyRSA.swift in Sources */,
-				C057922E21545CB00057F401 /* SwiftyRSA+ObjC.swift in Sources */,
 				C057922F21545CB00057F401 /* SwiftyRSAError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,7 +562,6 @@
 			files = (
 				C0579242215465350057F401 /* EncryptedMessage.swift in Sources */,
 				902623FF2687278D00489B07 /* X509Certificate.swift in Sources */,
-				C057924A215465350057F401 /* SwiftyRSA+ObjC.swift in Sources */,
 				9B4E2EB9252D8A0B0085F2B9 /* Data+SHA.swift in Sources */,
 				C0579243215465350057F401 /* Key.swift in Sources */,
 				C0579249215465350057F401 /* SwiftyRSA.swift in Sources */,
@@ -597,7 +585,6 @@
 				90EBFC8626AB093C002B30E9 /* X509Tests.swift in Sources */,
 				C057925D2154659B0057F401 /* KeyTests.swift in Sources */,
 				9737218E272A05D100D988A7 /* SwiftyRSAErrorTests.swift in Sources */,
-				C05792622154659B0057F401 /* ObjCTests.m in Sources */,
 				C057925F2154659B0057F401 /* EncryptDecryptTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -613,7 +600,6 @@
 				C076F54B1DADEBC2006AF5DB /* SignatureTests.swift in Sources */,
 				9737218D272A05D100D988A7 /* SwiftyRSAErrorTests.swift in Sources */,
 				C076F54C1DADEBC2006AF5DB /* TestUtils.swift in Sources */,
-				C076F54D1DADEBC2006AF5DB /* ObjCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
