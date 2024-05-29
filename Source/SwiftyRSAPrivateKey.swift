@@ -1,5 +1,5 @@
 //
-//  PrivateKey.swift
+//  SwiftyRSAPrivateKey.swift
 //  SwiftyRSA
 //
 //  Created by Lois Di Qual on 5/17/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PrivateKey: Key {
+public class SwiftyRSAPrivateKey: Key {
 
     /// Reference to the key within the keychain
     public let reference: SecKey

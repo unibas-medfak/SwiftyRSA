@@ -1,5 +1,5 @@
 //
-//  PublicKey.swift
+//  SwiftyRSAPublicKey.swift
 //  SwiftyRSA
 //
 //  Created by Lois Di Qual on 5/17/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class PublicKey: Key {
+public class SwiftyRSAPublicKey: Key {
 
     /// Reference to the key within the keychain
     public let reference: SecKey
@@ -76,7 +76,7 @@ public class PublicKey: Key {
     /// - parameter pemString: The string to use to parse out values
     ///
     /// - returns: An array of `PublicKey` objects
-    public static func publicKeys(pemEncoded pemString: String) -> [PublicKey] {
+    public static func publicKeys(pemEncoded pemString: String) -> [SwiftyRSAPublicKey] {
 
         // If our regexp isn't valid, or the input string is empty, we can't move forward…
         guard let publicKeyRegexp = publicKeyRegex, pemString.count > 0 else {
@@ -94,7 +94,7 @@ public class PublicKey: Key {
             range: all
         )
 
-        let keys = matches.compactMap { result -> PublicKey? in
+        let keys = matches.compactMap { result -> SwiftyRSAPublicKey? in
 
             let match = result.range(at: 1)
             let start = pemString.index(pemString.startIndex, offsetBy: match.location)
@@ -102,7 +102,7 @@ public class PublicKey: Key {
 
             let thisKey = pemString[start..<end]
 
-            return try? PublicKey(pemEncoded: String(thisKey))
+            return try? SwiftyRSAPublicKey(pemEncoded: String(thisKey))
         }
 
         return keys

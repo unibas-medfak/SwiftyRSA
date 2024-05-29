@@ -28,20 +28,20 @@ public class TestUtils {
         return (try! Data(contentsOf: URL(fileURLWithPath: pubPath)))
     }
 
-    static public func publicKey(name: String) throws -> PublicKey {
+    static public func publicKey(name: String) throws -> SwiftyRSAPublicKey {
         guard let path = bundle.path(forResource: name, ofType: "pem") else {
             throw TestError(description: "Couldn't load key for provided path")
         }
         let pemString = try String(contentsOf: URL(fileURLWithPath: path))
-        return try PublicKey(pemEncoded: pemString)
+        return try SwiftyRSAPublicKey(pemEncoded: pemString)
     }
 
-    static public func privateKey(name: String) throws -> PrivateKey {
+    static public func privateKey(name: String) throws -> SwiftyRSAPrivateKey {
         guard let path = bundle.path(forResource: name, ofType: "pem") else {
             throw TestError(description: "Couldn't load key for provided path")
         }
         let pemString = try String(contentsOf: URL(fileURLWithPath: path))
-        return try PrivateKey(pemEncoded: pemString)
+        return try SwiftyRSAPrivateKey(pemEncoded: pemString)
     }
 
     static public func randomData(count: Int) -> Data {
